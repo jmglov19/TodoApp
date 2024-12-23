@@ -1,5 +1,4 @@
 const express = require("express")
-const ejs = require("ejs")
 const mongoose = require('mongoose');
 
 const app = express();
@@ -7,8 +6,6 @@ const app = express();
 // conection to mongodb
 
 mongoose.connect("mongodb://localhost/todo_express", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
 });
 
 // middlewares
@@ -26,4 +23,4 @@ app.use(require("./routes/todo"))
 
 // server configurations
 
-app.listen(3000, () => console.log("Server started listening on port: 3000"));
+app.listen(3000, () => console.log("Server started listening on port: http://localhost:3000"));
