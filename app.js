@@ -5,8 +5,9 @@ const app = express();
 
 // conection to mongodb
 
-mongoose.connect("mongodb://localhost/todo_express", {
+mongoose.connect("mongodb://localhost:27017/todo_express", {
 });
+console.log(mongoose.connection.readyState);
 
 // middlewares
 
@@ -20,6 +21,8 @@ app.set ("view engine", "ejs");
 
 app.use(require("./routes/index"))
 app.use(require("./routes/todo"))
+
+
 
 // server configurations
 
